@@ -10,7 +10,7 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
 
 - Automatically upload ratings from Plex to TMDB
 - Cache completed uploads in a JSON database
-- Update ratings on TMDB if they change in Plex
+- Update ratings on TMDB when they change in Plex in the next configured cycle
 - Configurable upload interval
 - Dockerized for easy deployment
 - soon rating of single series/show episodes
@@ -27,15 +27,9 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
 
 1. Get the Plex-Token
 
-   ```
-   Press F12 to open up the developer console, and then click on the settings icon. 
+   Go to any of your libraries, click on any media, then click on "Get Info", then "View XML". Then you should get a long url, at the end of it
+   you will find your Plex token. It should look like this: M1CPccYc-uHHnC1BBdc (of course this is not a valid token)
    
-   After that, click in the name section on one of the requests (yellow marked):
-   requests?X-Plex-Product=Plex ...
-   users?X-Plex-Product=Plex ...
-   
-   After that klick on the payload tab, there you can find your X-Plex-Token
-   ```
 
 ![Screenshot](/screenshots/1.JPG)
 
