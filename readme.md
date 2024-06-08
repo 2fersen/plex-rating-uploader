@@ -5,6 +5,7 @@ ratings to TMDB (The Movie Database) on a specified cycle. It requires a Plex to
 uploads are cached in a JSON database, and if a rating changes, it is updated on TMDB accordingly. I would like to 
 add this feature for IMDB and TVDB as well, but IMDB does not seem to work at the moment, I will check TVDB soon.
 
+
 ## Features
 
 - Automatically upload ratings from Plex to TMDB
@@ -19,6 +20,7 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
 - Python 3.x
 - Plex token
 - TMDB API key
+
 
 
 ## Setup
@@ -50,33 +52,40 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
 ## Installation
 ### Docker
 
-1. Pull the Docker image:
+1. Pull the Docker container from GitHub:
 
    ```
-   docker pull 2fersen/plex-rating-uploader
+   git clone https://github.com/2fersen/plex-rating-uploader
+   ```
+   
+2. Setup the docker-compose.yml file so the container keeps running:
+
+   Change the path to data folder from the cloned directory like this:
+   
+   ```
+       volumes:
+         - C:\Users\.....\data:/data
    ```
 
-2. Run the container:
+3. Update the .env with your keys and settings:
+   Change the filename from:
+   ```
+   template.env_template
+   docker-compose up -d
+   ```
+   
+   To:
+   ```
+   .env
+   ```
 
-Create or download a folder named "data" with two files: "rating_db.json" and ".env".
+4. Run the container:
+   ```
+   docker-compose up -d
+   ```
+   
+   Thats it!
 
-If you create it yourself, populate the "rating_db.json" file with the following content:
-```
-{"series": {}, "movies": {}}
-```
-
-The ".env" file should look like this, but make sure to fill in your own values for the variables:
-```
-PLEX_TOKEN=YOUR-X-Plex-Token
-TMDB_API_KEY=API-Read-Access-Token
-RUN_INTERVAL_IN_MINUTES=60
-BASE_URL=http://192.168.50.226:32400
-```
-
-After that, copy the path to the "data" folder where both files are located, and you'll be ready to proceed with the following command:
-```
-docker run -it -v "path\to\your\data":/data 2fersen/plex-rating-uploader
-```
 
 ### Manual
 
