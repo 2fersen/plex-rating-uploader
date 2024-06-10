@@ -2,9 +2,8 @@
 
 Plex Rating Uploader is a Python script that exports rated movies and shows from Plex and automatically uploads the
 ratings to TMDB (The Movie Database) on a specified cycle. It requires a Plex token and a TMDB API key. Completed
-uploads are cached in a JSON database, and if a rating changes, it is updated on TMDB accordingly. I would like to 
+uploads are cached in a JSON database, and if a rating changes, it is updated on TMDB accordingly. I would like to
 add this feature for IMDB and TVDB as well, but IMDB does not seem to work at the moment, I will check TVDB soon.
-
 
 ## Features
 
@@ -21,15 +20,13 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
 - Plex token
 - TMDB API key
 
-
-
 ## Setup
 
 1. Get the Plex-Token
 
-   Go to any of your libraries, click on any media, then click on "Get Info", then "View XML". Then you should get a long url, at the end of it
+   Go to any of your libraries, click on any media, then click on "Get Info", then "View XML". Then you should get a
+   long url, at the end of it
    you will find your Plex token. It should look like this: M1CPccYc-uHHnC1BBdc (of course this is not a valid token)
-   
 
 ![Screenshot](/screenshots/1.JPG)
 
@@ -44,6 +41,7 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
    [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
 
 ## Installation
+
 ### Docker
 
 1. Pull the Docker container from GitHub:
@@ -51,11 +49,11 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
    ```
    git clone https://github.com/2fersen/plex-rating-uploader
    ```
-   
+
 2. Setup the docker-compose.yml file so the container keeps running:
 
    Change the path to data folder from the cloned directory like this:
-   
+
    ```
        volumes:
          - C:\Users\.....\data:/data
@@ -65,9 +63,8 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
    Change the filename from:
    ```
    template.env_template
-   docker-compose up -d
    ```
-   
+
    To:
    ```
    .env
@@ -77,9 +74,14 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
    ```
    docker-compose up -d
    ```
-   
-   Thats it!
+   ### Thats it!
 
+5. For updating the container:
+   ```
+   sudo docker-compose down
+   sudo docker-compose build
+   sudo docker-compose up -d
+   ```
 
 ### Manual
 
