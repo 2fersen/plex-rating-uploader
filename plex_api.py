@@ -218,13 +218,7 @@ def main():
 
 
 if __name__ == '__main__':
-    yellow = get_metadata("1301", media_type="movie")
-
     print('Starting rating tracker!')
     while True:
         main()
         time.sleep(run_interval_in_minutes * 60)
-
-# url = "http://192.168.50.226:32400/library/metadata/1301/children"
-#
-# response = requests.request("GET", url, headers=headers, data=payload).json()
