@@ -180,7 +180,7 @@ def main():
                                 continue
                             else:
                                 print(
-                                    f'[{i["title"]}] Episode rating changed from {data[lib_type][guid]["episodes"]['tmdb']} to {episode_user_rating}')
+                                    f'[{i["title"]}] Episode rating changed from {data[lib_type][guid]["episodes"][episode_guid]['tmdb']} to {episode_user_rating}')
 
                         if episode_user_rating and episode_ids.get('tmdb'):
                             add_rating_episode(ids['tmdb'], episode_user_rating, season_number, episode_number)
