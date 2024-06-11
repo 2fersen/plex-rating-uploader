@@ -79,7 +79,7 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
 5. For updating the container:
    ```
    sudo docker-compose down
-   sudo docker-compose build
+   sudo docker-compose build --no-cache
    sudo docker-compose up -d
    ```
 
