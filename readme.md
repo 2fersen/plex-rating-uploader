@@ -8,14 +8,19 @@ add this feature for IMDB and TVDB as well, but IMDB does not seem to work at th
 ## Features
 
 - Automatically upload ratings from Plex to TMDB
+- Upload movie, series and episode ratings
 - Cache completed uploads in a JSON database
 - Update ratings on TMDB when they change in Plex in the next configured cycle
 - Configurable upload interval
 - Dockerized for easy deployment
 - soon rating of single series/show episodes
 
-## Prerequisites
+## Soon added features
+- synchronize watchlist from TMDB to Plex and Plex to TMDB
+- synchronize TMDB ratings to plex
+- maybe add trakt support
 
+## Prerequisites
 - Python 3.x
 - Plex token
 - TMDB API key
